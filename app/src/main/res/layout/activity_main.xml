@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.matt.memoryteaser.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/gameRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <GridLayout
+                android:id="@+id/gridLayout"
+                android:layout_width="395dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sumTextView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="44dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.204"
+                app:layout_goneMarginTop="20dp">
+
+                <Button
+                    android:id="@+id/answerButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_row="0"
+                    android:layout_rowWeight="1"
+                    android:background="#f90303"
+                    android:onClick="chooseAnswer"
+                    android:tag="0"
+                    android:text="3"
+                    android:textAlignment="center"
+                    android:textSize="80sp" />
+
+                <Button
+                    android:id="@+id/answerButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_row="0"
+                    android:layout_rowWeight="1"
+                    android:background="#f106ab"
+                    android:onClick="chooseAnswer"
+                    android:tag="1"
+                    android:text="3"
+                    android:textAlignment="center"
+                    android:textSize="80sp" />
+
+                <Button
+                    android:id="@+id/answerButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_row="1"
+                    android:layout_rowWeight="1"
+                    android:background="#20f104"
+                    android:onClick="chooseAnswer"
+                    android:tag="2"
+                    android:text="3"
+                    android:textAlignment="center"
+                    android:textSize="80sp" />
+
+                <Button
+                    android:id="@+id/answerButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_row="1"
+                    android:layout_rowWeight="1"
+                    android:background="#e45c02"
+                    android:onClick="chooseAnswer"
+                    android:tag="3"
+                    android:text="3"
+                    android:textAlignment="center"
+                    android:textSize="80sp" />
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/sumTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/pointsTextView"
+                android:layout_centerHorizontal="true"
+                android:padding="15dp"
+                android:text="31 + 23"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/timerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="14dp"
+                android:background="#f4f804"
+                android:padding="10dp"
+                android:text="30s"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toStartOf="@+id/sumTextView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/playAgainButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="63dp"
+                android:onClick="playAgain"
+                android:text="Play Again!"
+                android:textSize="20sp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startButton" />
+
+            <TextView
+                android:id="@+id/pointsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="23dp"
+                android:background="#04f5e5"
+                android:padding="10dp"
+                android:text="0/0"
+                android:textSize="30sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sumTextView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/resultTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/playAgainButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="22dp"
+                android:textAlignment="center"
+                android:textSize="40sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="217dp"
+        android:layout_marginTop="128dp"
+        android:background="#22db0d"
+        android:onClick="start"
+        android:padding="40dp"
+        android:text="Go!"
+        android:textSize="80sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sumTextView" />
+
+</android.support.constraint.ConstraintLayout>
